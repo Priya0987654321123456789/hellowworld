@@ -1,0 +1,14 @@
+// Jenkinsfile
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'mkdir -p build'
+                // Compiling the Java program
+                sh 'javac -d build src/main/java/HelloWorld.java'
+            }
+        }
+
